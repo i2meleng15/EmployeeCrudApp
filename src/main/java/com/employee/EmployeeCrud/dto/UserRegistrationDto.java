@@ -1,4 +1,4 @@
-package com.employee.EmployeeCrud.DTO;
+package com.employee.EmployeeCrud.dto;
 
 public class UserRegistrationDto {
     private String name;

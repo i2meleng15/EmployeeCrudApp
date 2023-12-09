@@ -1,7 +1,7 @@
-package com.employee.EmployeeCrud.Service;
+package com.employee.EmployeeCrud.service;
 
-import com.employee.EmployeeCrud.Entity.Employee;
-import com.employee.EmployeeCrud.Repository.EmployeeRepository;
+import com.employee.EmployeeCrud.entity.Employee;
+import com.employee.EmployeeCrud.repository.EmployeeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;

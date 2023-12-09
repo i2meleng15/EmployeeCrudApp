@@ -1,9 +1,9 @@
-package com.employee.EmployeeCrud.Controller;
+package com.employee.EmployeeCrud.controller;
 
 import ch.qos.logback.core.model.Model;
 import org.springframework.data.domain.Page;
-import com.employee.EmployeeCrud.Entity.Employee;
-import com.employee.EmployeeCrud.Service.EmployeeService;
+import com.employee.EmployeeCrud.entity.Employee;
+import com.employee.EmployeeCrud.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;

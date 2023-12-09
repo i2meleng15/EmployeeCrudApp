@@ -1,6 +1,6 @@
-package com.employee.EmployeeCrud.Repository;
+package com.employee.EmployeeCrud.repository;
 
-import com.employee.EmployeeCrud.Entity.Employee;
+import com.employee.EmployeeCrud.entity.Employee;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

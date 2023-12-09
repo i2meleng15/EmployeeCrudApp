@@ -1,7 +1,7 @@
-package com.employee.EmployeeCrud.Controller;
+package com.employee.EmployeeCrud.controller;
 
-import com.employee.EmployeeCrud.DTO.UserRegistrationDto;
-import com.employee.EmployeeCrud.Service.UserService;
+import com.employee.EmployeeCrud.dto.UserRegistrationDto;
+import com.employee.EmployeeCrud.service.UserService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -14,17 +14,18 @@ public class UserRegistrationController {
 
     private UserService userService;
 
-    public UserRegistrationController(UserService userService){
+    public UserRegistrationController(UserService userService) {
         super();
         this.userService = userService;
     }
 
     @ModelAttribute("user")
-    public UserRegistrationDto userRegistrationDto(){
-        return new UserRegistrationDto;
+    public UserRegistrationDto userRegistrationDto() {
+        return new UserRegistrationDto();
     }
+
     @GetMapping()
-    public String registrationForm(){
+    public String registrationForm() {
         return "registration";
     }
 

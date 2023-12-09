@@ -1,4 +1,4 @@
-package com.employee.EmployeeCrud.Entity;
+package com.employee.EmployeeCrud.entity;
 
 import jakarta.persistence.*;
 

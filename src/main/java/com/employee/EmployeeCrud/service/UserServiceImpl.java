@@ -1,42 +1,39 @@
-package com.employee.EmployeeCrud.Service;
+package com.employee.EmployeeCrud.service;
 
-import com.employee.EmployeeCrud.DTO.UserRegistrationDto;
-import com.employee.EmployeeCrud.Entity.User;
-import com.employee.EmployeeCrud.Repository.UserRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.employee.EmployeeCrud.dto.UserRegistrationDto;
+import com.employee.EmployeeCrud.entity.User;
+import com.employee.EmployeeCrud.repository.UserRepository;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import javax.management.relation.Role;
-import java.util.Arrays;
 import java.util.Collection;
+import java.util.List;
 import java.util.stream.Collectors;
 
 @Service
 public class UserServiceImpl implements UserService	{
 
-    private UserRepository userRepository;
-
-
-    @Autowired
-    private BCryptPasswordEncoder passwordEncoder;
+    private final UserRepository userRepository;
+    private final PasswordEncoder passwordEncoder;
 
     public UserServiceImpl(UserRepository userRepository) {
         super();
         this.userRepository = userRepository;
+        this.passwordEncoder = passwordEncoder;
     }
 
     @Override
     public User save(UserRegistrationDto userRegistrationDto) {
         User user = new User(userRegistrationDto.getName(),
                 userRegistrationDto.getSurname(), userRegistrationDto.getEmail(),
-                passwordEncoder.encode(userRegistrationDto.getPassword()), Arrays.asList(new Role("ROLE_USER")));
+                this.passwordEncoder.encode(userRegistrationDto.getPassword()), List.of(new Role("ROLE_USER")));
 
-        return userRepository.save(user);
+        return this.userRepository.save(user);
     }
 
     @Override

@@ -1,6 +1,6 @@
-package com.employee.EmployeeCrud.Repository;
+package com.employee.EmployeeCrud.repository;
 
-import com.employee.EmployeeCrud.Entity.User;
+import com.employee.EmployeeCrud.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface UserRepository extends JpaRepository<User, Long> {
